@@ -8,9 +8,15 @@ import '../../widgets_common/bg_widget.dart';
 import '../../widgets_common/custom_textfield.dart';
 import '../../widgets_common/our_button.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool? isChek = false;
   @override
   Widget build(BuildContext context) {
     return bgWidget(
@@ -37,8 +43,12 @@ class SignupScreen extends StatelessWidget {
                   Row(
                     children: [Checkbox(
                       checkColor: redColor,
-                      value: false, 
-                      onChanged: (newValue) {}
+                      value: isChek, 
+                      onChanged: (newValue) {
+                        setState(() {
+                          isChek = newValue;
+                        }); 
+                      }
                     ,),
                     10.widthBox,
                     Expanded(
@@ -75,7 +85,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   5.heightBox,
                   //ourButton().box.width(context.screenWidth -50 ).make(),
-                  ourButton(color: redColor, title: signup,textcolor: whiteColor,onPress: (){})
+                  ourButton(color: isChek == true? redColor : lightGrey, title: signup,textcolor: whiteColor,onPress: (){})
                   .box
                   .width(context.screenWidth - 50)
                   .make(),
