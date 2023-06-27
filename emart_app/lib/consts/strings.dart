@@ -1,4 +1,4 @@
-const appname = "Akofena Shop";
+const appname = "eMart";
 const appversion = "Version 1.0.0";
 const credits = "@akofenadigital";
 const email = "Email";
@@ -12,6 +12,8 @@ const forgetPass = "Forget Password";
 const login = "Log in";
 const logout ="Log Out"; 
 const signup = "Sign up";
+const loggedin = "Log in succeffuly";
+const loggedout = "Log out succeffuly";
 const createNewAccount = "or, create a new account";
 const loginWith = "Log in with";
 const privatepolicy = "Private Policy";

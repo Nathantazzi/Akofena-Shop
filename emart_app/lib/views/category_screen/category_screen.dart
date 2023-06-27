@@ -27,8 +27,8 @@ class CategoryScreen extends StatelessWidget {
             children: [
               Image.asset(
               categoriesImages[index],
-              height: 120,
-              width: 200,
+              height: 160,
+              width: 150,
               fit: BoxFit.cover),
               10.heightBox,
               categoriesList[index].text.color(darkFontGrey).align(TextAlign.center).make(),

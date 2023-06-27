@@ -9,11 +9,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mq;
+    
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       padding: const EdgeInsets.all(12),
       color: lightGrey,
-      width: context.screenWidth,
+      width: context.screenHeight,
       height: context.screenHeight,
       child: SafeArea(
         child: Column(
@@ -33,9 +34,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-
+    
         10.heightBox,
-
+    
         Expanded(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
@@ -61,14 +62,14 @@ class HomeScreen extends StatelessWidget {
                   children: List.generate(
                     2, 
                     (index) => homeButtons(
-                    height: mq.size.height = 0.15,
+                   height: context.screenHeight * 0.15,
                     width: context.screenWidth / 2.5,
                     icon: index == 0 ? icTodaysDeal : icFlashDeal,
                     title: index == 0 ? todayDeal : flashsale,
                     )),
                 ),
                 //second swipers 
-
+    
                 20.heightBox,
           //swipers brands
                 VxSwiper.builder(
@@ -88,7 +89,7 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: List.generate(3, (index) => homeButtons(
-                  height: mq.size.height = 0.15,
+                    height:context.screenHeight * 0.15,
                     width: context.screenWidth / 3.5,
                     icon: index == 0 ? icCategories : index == 1 ? icBrands : icTopSeller,
                     title: index == 0 ? icCategories : index == 1 ? icBrands : icTopSeller,
@@ -113,9 +114,9 @@ class HomeScreen extends StatelessWidget {
                     )).toList(),
                   ),
                  ),
-
+    
                  //features product
-
+    
                   20.heightBox,
                   Container(
                     padding: const EdgeInsets.all(12),
@@ -147,10 +148,10 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-
+    
                     //third swipper
                    20.heightBox,
-
+    
                    VxSwiper.builder(
                 aspectRatio: 16 / 9,
                 autoPlay: true,
@@ -163,7 +164,7 @@ class HomeScreen extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                     ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();    
               }),
-
+    
                 //all products
                 20.heightBox,
                 GridView.builder( 
@@ -190,12 +191,12 @@ class HomeScreen extends StatelessWidget {
                               .roundedSM.padding( const EdgeInsets.all(12))
                               .make();
                 })
-
+    
               ],
             ),
           ),
         ),
-
+    
         ],
       )),
     );

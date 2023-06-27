@@ -1,5 +1,6 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/consts/list.dart';
+import 'package:emart_app/views/auth_screen/singup_screen.dart';
 import 'package:emart_app/views/home_screen/home.dart';
 import 'package:emart_app/widgets_common/applogo_widget.dart';
 import 'package:emart_app/widgets_common/bg_widget.dart';
@@ -22,13 +23,13 @@ class LoginScreen extends StatelessWidget {
             (context.screenHeight * 0.1).heightBox,
             applogowidget(),
             10.heightBox,
-             "Log in to $appname" .text.fontFamily(bold).white.size(22).make(),
-             15.heightBox ,
+             "Log In " .text.fontFamily(bold).white.size(22).make(),
+             30.heightBox ,
 
              Column(
               children: [
-                custTextField(hint: emailHint,title: email),
-                custTextField(hint: passwordHint,title: password),
+                custTextField(hint: emailHint,title: email,isPass: false),
+                custTextField(hint: passwordHint,title: password,isPass: true),
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(onPressed: () {}, child: forgetPass.text.make())),
@@ -48,7 +49,9 @@ class LoginScreen extends StatelessWidget {
                   createNewAccount.text.color(fontGrey).make(),
                   5.heightBox,
 
-                  ourButton(color: lightgolden, title: signup, textcolor: redColor, onPress: (){})
+                  ourButton(color: lightgolden, title: signup, textcolor: whiteColor, onPress: (){
+                    Get.to(()=>const SignupScreen());
+                  })
                   .box
                   .width(context.screenWidth - 50)
                   .make(),

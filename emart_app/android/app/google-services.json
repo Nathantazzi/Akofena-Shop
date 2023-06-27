@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "628451981222",
+    "firebase_url": "https://ecommerce-ad194-default-rtdb.firebaseio.com",
+    "project_id": "ecommerce-ad194",
+    "storage_bucket": "ecommerce-ad194.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628451981222:android:ed6277d89788dc26d68167",
+        "android_client_info": {
+          "package_name": "com.example.emart_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628451981222-9jeab7p4ej3g7jscmskj4grarfp0vmng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0HyWdwWNvC8uyzFuCOmxrBuwFBl409Sg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628451981222-9jeab7p4ej3g7jscmskj4grarfp0vmng.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "628451981222-6bt2hk2uufjl4pdnq6frd4tmqlf90ruu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.emartApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
