@@ -13,7 +13,7 @@ const featuredTitle1 = [womenDress,girlsDress,girlWatches];
 const featuredTitle2 = [boyGlasses,mobilesPhone,tshirts];
 
 const categoriesList = [
-  womenClothing,
+      womenClothing,
       menClothingFashion,
       compAcces,
       automible,
@@ -22,9 +22,11 @@ const categoriesList = [
       jewelery ,
       cellphone,
       furniture 
+
+      
 ];
 
-const categoriesImages = [imgFc1,imgFc2,imgFc3,imgFc4,imgFc5,imgFc6,imgFc7,imgFc8,imgFc9];
+const categoriesImages = [imgS1,imgFc1,imgFc2,imgFc3,imgFc4,imgFc5,imgS11,imgFc6,imgFc9];
 
 const itemsDetailsButtomsList = [video,reviews,sellerpolicy,returnpolity,supportpolity];
 

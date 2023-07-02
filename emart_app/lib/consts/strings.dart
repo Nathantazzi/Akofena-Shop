@@ -1,4 +1,4 @@
-const appname = "eMart";
+const appname = "Akofena Digital";
 const appversion = "Version 1.0.0";
 const credits = "@akofenadigital";
 const email = "Email";
@@ -60,4 +60,4 @@ const search = "Search anything....",
       sellerpolicy = "Seller Policy" , returnpolity = "Return Polity" , 
       supportpolity = "Support Polity", productsyoumaylike = "Products you may also like"; 
 
-      const wishlist = "My Wishlist", orders = "My Orders", message = "Messages";
+      const wishlist = "My Wishlist", orders = "My Orders", message = "Messages" , oldpass = 'Old password', newdpass = 'New password';

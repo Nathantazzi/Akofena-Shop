@@ -56,24 +56,24 @@ class HomeScreen extends StatelessWidget {
                     ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();    
               }),
           
-                10.heightBox,
+                5.heightBox,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(
                     2, 
                     (index) => homeButtons(
-                   height: context.screenHeight * 0.15,
-                    width: context.screenWidth / 2.5,
+                    height: context.screenHeight * 0.12,
+                    width: context.screenWidth / 2.7,
                     icon: index == 0 ? icTodaysDeal : icFlashDeal,
                     title: index == 0 ? todayDeal : flashsale,
                     )),
                 ),
                 //second swipers 
     
-                20.heightBox,
+                5.heightBox,
           //swipers brands
                 VxSwiper.builder(
-                aspectRatio: 16 / 9,
+                aspectRatio: 20 / 12,
                 autoPlay: true,
                 height: 150,
                 enlargeCenterPage: true,
@@ -85,14 +85,22 @@ class HomeScreen extends StatelessWidget {
                     ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();    
               }),
           
-              10.heightBox,
+              5.heightBox,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(3, (index) => homeButtons(
-                    height:context.screenHeight * 0.15,
+                children: List.generate(
+                  3, 
+                  (index) => homeButtons(
+                    height: context.screenHeight * 0.12,
                     width: context.screenWidth / 3.5,
-                    icon: index == 0 ? icCategories : index == 1 ? icBrands : icTopSeller,
-                    title: index == 0 ? icCategories : index == 1 ? icBrands : icTopSeller,
+                  icon: index == 0 
+                    ? icCategories 
+                    : index == 1 
+                    ? icBrands : icTopSeller,
+                  title: index == 0 
+                    ? categories 
+                    : index == 1 
+                    ? brand : topSellers,
                 )),
               ),
           

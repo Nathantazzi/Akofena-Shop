@@ -1,3 +1,4 @@
+import 'package:emart_app/controllers/product_controller.dart';
 import 'package:emart_app/views/category_screen/items_ennum.dart';
 import 'package:emart_app/widgets_common/bg_widget.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,11 @@ class CategoryEnnum extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    var controller = Get.find<ProductController>();
+
+
     return bgWidget(
       child: Scaffold(
         appBar: AppBar(
@@ -19,14 +25,16 @@ class CategoryEnnum extends StatelessWidget {
         body: Container(
           padding: const EdgeInsets.all(12),
           child: Column(
+            
             children: [
               SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(
-                    6, (index) => "Baby Clothing"
-                    .text.fontFamily(semibold)
+                    controller.subcat.length, 
+                    (index) => "${controller.subcat[index]}"
+                    .text
                     .size(12)
                     .color(darkFontGrey)
                     .makeCentered()

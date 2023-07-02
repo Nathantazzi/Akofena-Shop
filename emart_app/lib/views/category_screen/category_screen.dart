@@ -1,6 +1,7 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/consts/list.dart';
 import 'package:emart_app/consts/strings.dart';
+import 'package:emart_app/controllers/product_controller.dart';
 import 'package:emart_app/views/category_screen/category_ennum.dart';
 import 'package:emart_app/widgets_common/bg_widget.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(ProductController());
     return bgWidget(
       child: Scaffold(
         appBar: AppBar(
@@ -35,6 +37,7 @@ class CategoryScreen extends StatelessWidget {
 
             ],
           ).box.white.rounded.clip(Clip.antiAlias).outerShadowSm.make().onTap(() {
+            controller.getSubCategories(categoriesList[index]);
             Get.to(()=> CategoryEnnum(title: categoriesList[index]));
           });
           })
