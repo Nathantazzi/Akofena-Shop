@@ -44,14 +44,14 @@ const search = "Search anything....",
 
       //categories strings
 
-      const womenClothing = "Women clothing",
-      menClothingFashion = "Computer & Accessoiries",
+      const womenClothing = "Women Dress",
+      menClothingFashion = "Men Dress",
       compAcces = "Computer & Accessoiries",
-      automible = "Automobiles",
+      automible = "Automobile",
       kidtoys = "Kids & Toys",
       sports = "Sports",
       jewelery = "Jewelery",
-      cellphone = "Cellphone",
+      cellphone = "CellPhone & Tabs",
       furniture = "Furniture";
 
       //item details strings
