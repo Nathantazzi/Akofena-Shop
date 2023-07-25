@@ -61,3 +61,5 @@ const search = "Search anything....",
       supportpolity = "Support Polity", productsyoumaylike = "Products you may also like"; 
 
       const wishlist = "My Wishlist", orders = "My Orders", message = "Messages" , oldpass = 'Old password', newdpass = 'New password';
+
+      const stripe = "Stripe", om = "Orange Money", momo = "MTN Mobile Money";

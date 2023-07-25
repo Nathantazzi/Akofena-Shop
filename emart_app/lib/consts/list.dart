@@ -33,3 +33,9 @@ const itemsDetailsButtomsList = [video,reviews,sellerpolicy,returnpolity,support
 const profilebuttomList = [wishlist,orders,message];
 const profilebuttomIcon = [icOrder,icMessages,icOrder];
 
+
+const paymentList = [imgStripe,imgOm,imgMomo];
+const payment = [stripe,om,momo];
+
+
+
