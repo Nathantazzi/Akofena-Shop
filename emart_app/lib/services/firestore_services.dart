@@ -17,11 +17,11 @@ class FirestoreServices {
 }
 
 static getCart(uid) {
-    return fierestore.collection(cartCollection).where('added_by',isEqualTo: uid).snapshots();
+    return fierestore.collection(cardCollection).where('added_by',isEqualTo: uid).snapshots();
   }
 
   static deleteDocument(docId) {
-    return fierestore.collection(cartCollection).doc(docId).delete();
+    return fierestore.collection(cardCollection).doc(docId).delete();
   }
 
   static getChatMessages(docId){
@@ -32,4 +32,48 @@ static getCart(uid) {
     .orderBy('created_on', descending: false)
     .snapshots();
   }
+
+   static getAllOrders() {
+    return fierestore.collection(ordersCollection).where('order_by', isEqualTo: currentUser!.uid).snapshots();
+  }
+
+  static getWishlist(){
+    return fierestore.collection(productsCollection).where('p_wishlist', arrayContains: currentUser!.uid).snapshots();
+  }
+
+  static getAllMessages(){
+    return fierestore
+    .collection(chatsCollection)
+    .where('fromId', isEqualTo: currentUser!.uid)
+    .snapshots();
+  }
+
+  static getCounts() async {
+    var res = await Future.wait([
+      fierestore.collection(cardCollection).where('added_by', isEqualTo: currentUser!.uid).get().then((value){
+        return value.docs.length;
+      }),
+      fierestore.collection(productsCollection).where('p_wishlist', arrayContains: currentUser!.uid).get().then((value){
+        return value.docs.length;
+      }),
+      fierestore.collection(ordersCollection).where('order_by', isEqualTo: currentUser!.uid).get().then((value){
+        return value.docs.length;
+      }),
+    ]);
+    return res;
+  }
+
+  static allproducts(){
+    return fierestore.collection(productsCollection).snapshots();
+  }
+
+  static getFeatureProducts(){
+    return fierestore.collection(productsCollection).where('is_featured',isEqualTo: true).get();
+  }
+
+    static seachProducts(title){
+    return fierestore.collection(productsCollection).get();
+  }
+
+
 }

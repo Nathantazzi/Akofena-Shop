@@ -4,9 +4,13 @@ import 'package:emart_app/consts/list.dart';
 import 'package:emart_app/controllers/auth_controller.dart';
 import 'package:emart_app/controllers/profile_controller.dart';
 import 'package:emart_app/views/auth_screen/login_screen.dart';
+import 'package:emart_app/views/chat_screen.dart/message_screen.dart';
+import 'package:emart_app/views/order_screen/order_screen.dart';
 import 'package:emart_app/views/profile_screen/Components/details_card.dart';
 import 'package:emart_app/views/profile_screen/edit_profil.dart';
+import 'package:emart_app/views/wishlist_screen/wishlist_screen.dart';
 import 'package:emart_app/widgets_common/bg_widget.dart';
+import 'package:emart_app/widgets_common/loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -100,14 +104,35 @@ class ProfileScreen extends StatelessWidget {
               ),
 
               20.heightBox,
-             Row(
+
+                FutureBuilder(
+                  future: FirestoreServices.getCounts(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot){
+                    if (!snapshot.hasData) {
+                      return Center(child: loadingIndicator());
+                    } else {
+                      var countData = snapshot.data;
+                      return Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                detailsCards(count: "00",title: data ['cart_count'], width: context.screenWidth / 3.5),
-                detailsCards(count: "25",title: data ['wishlist_count'], width: context.screenWidth / 3.5),
-                detailsCards(count: "30",title: data ['order_count'], width: context.screenWidth / 3.5),
+                detailsCards(count: countData[0].toString(),title: "in your cart", width: context.screenWidth / 3.5),
+                detailsCards(count: countData [1].toString(),title: "in your whislist", width: context.screenWidth / 3.5),
+                detailsCards(count: countData [2].toString(),title: "in your orders", width: context.screenWidth / 3.5),
               ],
-             ),
+             ); 
+                    }
+                    
+                  },
+                  ),
+
+             /* Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                detailsCards(count: data['cart_count'],title: "in your cart", width: context.screenWidth / 3.5),
+                detailsCards(count: data ['wishlist_count'],title: "in your whislist", width: context.screenWidth / 3.5),
+                detailsCards(count: data ['order_count'],title: "in your orders", width: context.screenWidth / 3.5),
+              ],
+             ), */
 
              ListView.separated(
               shrinkWrap: true,
@@ -118,6 +143,19 @@ class ProfileScreen extends StatelessWidget {
               },
               itemCount: profilebuttomList.length,itemBuilder: (BuildContext context, int index){
               return ListTile(
+                onTap: (){
+                  switch (index) {
+                    case 0:
+                      Get.to(()=>const WishlistScreen());
+                      break;
+                      case 1:
+                      Get.to(()=>const  OrderScreen());
+                      break;
+                      case 2:
+                      Get.to(()=>const MessageScreen());
+                      break;
+                  }
+                },
                 leading: Image.asset(profilebuttomIcon[index],
                 width: 22,
                 

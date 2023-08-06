@@ -53,16 +53,29 @@ class ProductController extends GetxController{
       totalPrice.value = price * quantity.value;
     }
 
-    addToCart({title, img, sellername, color, qty, tprice, context}) async {
-      await fierestore.collection(cartCollection).doc().set({
+    addToCart({title, img, sellername, color, qty, tprice, context,vendorID}) async {
+
+/*        print({{ 'title': title,
+        'img': img,
+        'sellername': sellername,
+        'color': color,
+        'qty': qty,
+        'vendor_id':vendorID,
+        'tprice':tprice,
+        'added_by': currentUser!.uid}});  */
+
+
+      await fierestore.collection(cardCollection).doc().set({
         'title': title,
         'img': img,
         'sellername': sellername,
         'color': color,
         'qty': qty,
+        //'vendor_id':vendorID,
         'tprice':tprice,
         'added_by': currentUser!.uid
       }).catchError((error){
+        print(error);
         VxToast.show(context, msg: error.toString());
       });
     }

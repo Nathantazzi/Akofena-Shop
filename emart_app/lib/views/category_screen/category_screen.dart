@@ -1,6 +1,5 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/consts/list.dart';
-import 'package:emart_app/consts/strings.dart';
 import 'package:emart_app/controllers/product_controller.dart';
 import 'package:emart_app/views/category_screen/category_ennum.dart';
 import 'package:emart_app/widgets_common/bg_widget.dart';

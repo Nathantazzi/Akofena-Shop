@@ -22,6 +22,8 @@ class CartController extends GetxController{
 
   var products=[];
 
+  var placingOrder = false.obs;
+
   calculateCart(data) {
     totalP.value =0;
     for (var i = 0; i < data.length; i++){
@@ -34,6 +36,9 @@ class CartController extends GetxController{
   }
 
   placeMyOrder({required orderspaymentMethod,required totalAmount}) async {
+
+    placingOrder(true);
+
     await getProductDetails();
      await fierestore.collection(ordersCollection).doc().set({
       'order_code': "132645658978",
@@ -55,6 +60,7 @@ class CartController extends GetxController{
       'total_amount': totalAmount,
       'orders': FieldValue.arrayUnion(products)
     }); 
+    placingOrder(false);
   }
   
     getProductDetails(){
@@ -63,11 +69,18 @@ class CartController extends GetxController{
         products.add({
           'color': productSnapshot[i]['color'],
           'img': productSnapshot[i]['img'],
+           'tprice': productSnapshot[i]['tprice'],
           'qty': productSnapshot[i]['qty'],
           'title': productSnapshot[i]['title']
         });
       }
     }
 
+
+  clearCart(){
+    for (var i = 0; i < productSnapshot.length; i++) {
+      fierestore.collection(cardCollection).doc(productSnapshot[i].id).delete();
+    }
+  }
 
 }
