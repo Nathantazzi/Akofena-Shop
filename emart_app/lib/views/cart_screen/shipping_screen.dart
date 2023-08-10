@@ -18,7 +18,7 @@ class ShippingDetails extends StatelessWidget {
         title: "Shipping Info".text.fontFamily(semibold).color(darkFontGrey).make(),
       ),
       bottomNavigationBar: SizedBox(
-        height: 60,
+        height: 50,
         child: ourButton(
           onPress: (){
             if (controller.addressController.text.length > 10) {
@@ -34,7 +34,7 @@ class ShippingDetails extends StatelessWidget {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(13.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             custTextField(hint: "Address", isPass: false, title: "Address",controller: controller.addressController),

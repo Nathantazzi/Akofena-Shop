@@ -59,20 +59,21 @@ class PaymentMethods extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       border: Border.all(
-                        color: controller.paymentIndex.value == index ? redColor : Colors.transparent,
+                        color: controller.paymentIndex.value == index ? whiteColor : Colors.transparent,
                         width: 3.5,
                       )),
                     margin: const EdgeInsets.only(bottom: 8),
                     child: Stack(
                       alignment: Alignment.topRight,
                       children: [
-                        Image.asset(paymentList[index],width: double.infinity, 
-                        height: 100, 
+                        Image.asset(paymentList[index],
+                        width: 438, 
+                        height: 235, 
                         colorBlendMode: controller. paymentIndex.value == index ? BlendMode.darken 
                         : BlendMode.color,
                         color: controller. paymentIndex.value == index ? Colors.black.withOpacity(0.4) 
                         : Colors.transparent,
-                        fit: BoxFit.cover,),
+                        fit: BoxFit.fill,),
                       controller.paymentIndex.value == index ? Transform.scale(
                         scale: 1.3,
                         child: Checkbox(
@@ -85,7 +86,7 @@ class PaymentMethods extends StatelessWidget {
                           ),
                       ): Container(),
                       Positioned(
-                        bottom: 10,
+                        bottom: 50,
                         right: 10,
                         child: payment[index].text.transparent.fontFamily(bold).size(16).make(),
                       ),

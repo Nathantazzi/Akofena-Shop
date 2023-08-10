@@ -22,7 +22,7 @@ class OrderDetails extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              orderStatus(color: redColor,icon: Icons.done,title: "Placed",showDone: data['order_placed']),
+              orderStatus(color: redColor,icon: Icons.done,title: "Order placed",showDone: data['order_placed']),
               orderStatus(color: Colors.blue,icon: Icons.thumb_up,title: "Confirmed",showDone: data['order_confirmed']),
               orderStatus(color: Colors.yellow,icon: Icons.car_crash,title: "On Delivery",showDone: data['order_on_delivery']),
               orderStatus(color: Colors.purple,icon: Icons.done_all_rounded,title: "De livered",showDone: data['order_delivered']),

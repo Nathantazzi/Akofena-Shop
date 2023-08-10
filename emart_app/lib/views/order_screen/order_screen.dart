@@ -39,7 +39,7 @@ class OrderScreen extends StatelessWidget {
                 subtitle: data[index]['total_amount'].toString().numCurrency.text.fontFamily(bold).make(),
                 trailing: IconButton(
                   onPressed: (){
-                    //Get.to(()=>OrderDetails());
+                    Get.to(()=>const OrderDetails());
                   },
                   icon: const Icon(
                     Icons.arrow_forward_ios_rounded,
