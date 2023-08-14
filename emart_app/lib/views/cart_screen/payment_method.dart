@@ -2,6 +2,7 @@ import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/consts/list.dart';
 import 'package:emart_app/controllers/cart_controller.dart';
 import 'package:emart_app/views/home_screen/home.dart';
+import 'package:emart_app/views/stripe_payment/payment_manager.dart';
 import 'package:emart_app/widgets_common/loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,8 +26,8 @@ class PaymentMethods extends StatelessWidget {
           child: controller.placingOrder.value ? Center(
             child: loadingIndicator(), 
           ): ourButton(
-            onPress: () async{
-               await controller.placeMyOrder(
+            onPress: () /* async */{
+               /* await controller.placeMyOrder(
                   orderspaymentMethod: payment[controller.paymentIndex.value],
                   totalAmount: controller.totalP.value);
                   await controller.clearCart(); 
@@ -34,7 +35,8 @@ class PaymentMethods extends StatelessWidget {
                   // ignore: use_build_context_synchronously
                   VxToast.show(context, msg: "Order placed successfully");
 
-                  Get.offAll(const Home());
+                  Get.offAll(const Home()) ;*/
+                  PaymentManager.makePayment(1000, "USD");
             },
             color: redColor,
             textcolor: whiteColor,
